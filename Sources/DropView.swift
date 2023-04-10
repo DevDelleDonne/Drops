@@ -195,9 +195,9 @@ internal final class DropView: UIView {
     view.alignment = .center
     view.distribution = .fill
     if drop.icon != nil, drop.action?.icon != nil {
-      view.spacing = 20
-    } else {
       view.spacing = 15
+    } else {
+      view.spacing = 5
     }
     return view
   }()
