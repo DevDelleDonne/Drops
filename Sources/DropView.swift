@@ -162,7 +162,7 @@ internal final class DropView: UIView {
     view.translatesAutoresizingMaskIntoConstraints = false
     view.contentMode = .scaleAspectFit
     view.clipsToBounds = true
-    view.tintColor = UIAccessibility.isDarkerSystemColorsEnabled ? .label : .secondaryLabel
+    view.tintColor = UIAccessibility.isDarkerSystemColorsEnabled ? .white : .black
     return view
   }()
 
