@@ -65,7 +65,7 @@ internal final class DropView: UIView {
       button.widthAnchor.constraint(equalToConstant: 35)
     ]
 
-    var insets = UIEdgeInsets(top: 7.5, left: 120.5, bottom: 7.5, right: 120.5)
+    var insets = UIEdgeInsets(top: 8.5, left: 9.5, bottom: 8.5, right: 9.5)
 
     if drop.icon == nil {
       insets.left = 40
