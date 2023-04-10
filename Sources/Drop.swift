@@ -47,7 +47,7 @@ public struct Drop: ExpressibleByStringLiteral {
     subtitleNumberOfLines: Int = 1,
     icon: UIImage? = nil,
     action: Action? = nil,
-    position: Position = .top,
+    position: Position = .bottom,
     duration: Duration = .recommended,
     accessibility: Accessibility? = nil
   ) {
@@ -71,7 +71,7 @@ public struct Drop: ExpressibleByStringLiteral {
     self.title = title
     titleNumberOfLines = 1
     subtitleNumberOfLines = 1
-    position = .top
+    position = .bottom
     duration = .recommended
     accessibility = .init(message: title)
   }
@@ -107,9 +107,6 @@ public struct Drop: ExpressibleByStringLiteral {
 public extension Drop {
   /// An enum representing drop presentation position.
   enum Position: Equatable {
-    /// Drop is presented from top.
-    case top
-    /// Drop is presented from bottom.
     case bottom
   }
 }
