@@ -138,7 +138,7 @@ internal final class DropView: UIView {
   lazy var titleLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.textAlignment = .center
+    label.textAlignment = .left
     label.textColor = .label
     label.font = UIFont.preferredFont(forTextStyle: .subheadline).bold
     label.adjustsFontForContentSizeCategory = true
@@ -149,7 +149,7 @@ internal final class DropView: UIView {
   lazy var subtitleLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.textAlignment = .center
+    label.textAlignment = .left
     label.textColor = UIAccessibility.isDarkerSystemColorsEnabled ? .label : .secondaryLabel
     label.font = UIFont.preferredFont(forTextStyle: .subheadline)
     label.adjustsFontForContentSizeCategory = true
@@ -195,9 +195,9 @@ internal final class DropView: UIView {
     view.alignment = .center
     view.distribution = .fill
     if drop.icon != nil, drop.action?.icon != nil {
-      view.spacing = 15
+      view.spacing = 20
     } else {
-      view.spacing = 10
+      view.spacing = 15
     }
     return view
   }()
