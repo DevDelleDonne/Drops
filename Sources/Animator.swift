@@ -80,10 +80,6 @@ internal final class Animator {
     ]
 
     switch position {
-    case .top:
-      constraints += [
-        view.topAnchor.constraint(equalTo: container.safeAreaLayoutGuide.topAnchor, constant: bounceOffset)
-      ]
     case .bottom:
       constraints += [
         view.bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor, constant: -bounceOffset)
@@ -96,8 +92,6 @@ internal final class Animator {
     let animationDistance = view.frame.height
 
     switch position {
-    case .top:
-      view.transform = CGAffineTransform(translationX: 0, y: -animationDistance)
     case .bottom:
       view.transform = CGAffineTransform(translationX: 0, y: animationDistance)
     }
@@ -121,8 +115,6 @@ internal final class Animator {
         view?.alpha = 0
         let frame = view?.frame ?? .zero
         switch position {
-        case .top:
-          view?.transform = CGAffineTransform(translationX: 0, y: -frame.height)
         case .bottom:
           view?.transform = CGAffineTransform(translationX: 0, y: frame.height)
         }
@@ -184,11 +176,6 @@ internal final class Animator {
     let height = view.bounds.height - bounceOffset
     if height <= 0 { return state }
 
-    if case .top = position {
-      velocity.y *= -1.0
-      translation.y *= -1.0
-    }
-
     var translationAmount = translation.y >= 0 ? translation.y : -pow(abs(translation.y), 0.7)
 
     if !state.closing {
@@ -200,8 +187,6 @@ internal final class Animator {
     if !rubberBanding, translationAmount < 0 { translationAmount = 0 }
 
     switch position {
-    case .top:
-      view.transform = CGAffineTransform(translationX: 0, y: -translationAmount)
     case .bottom:
       view.transform = CGAffineTransform(translationX: 0, y: translationAmount)
     }

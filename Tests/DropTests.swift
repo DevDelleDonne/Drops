@@ -34,7 +34,6 @@ final class DropTests: XCTestCase {
     XCTAssertEqual(drop.subtitleNumberOfLines, 1)
     XCTAssertNil(drop.icon)
     XCTAssertNil(drop.action)
-    XCTAssertEqual(drop.position, .top)
     XCTAssertEqual(drop.duration, .recommended)
     XCTAssertEqual(drop.accessibility.message, "Hello world")
   }
@@ -42,7 +41,6 @@ final class DropTests: XCTestCase {
   func testExpressiblesInitializer() {
     let drop1: Drop = "Hello world"
     XCTAssertEqual(drop1.title, "Hello world")
-    XCTAssertEqual(drop1.position, .top)
     XCTAssertEqual(drop1.duration, .recommended)
     XCTAssertEqual(drop1.accessibility.message, "Hello world")
 
